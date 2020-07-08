@@ -1,0 +1,8 @@
+const express = require("express");
+const app = express();
+
+PORT = 4000;
+function handleListening() {
+  console.log(`Listening on : "http://localhost:${PORT}`);
+}
+app.listen(4000, handleListening);
