@@ -1,5 +1,6 @@
-export const home = (req, res) => res.render("home", { pageTitle: "home" });
-export const videos = (req, res) => res.send("videos", { pageTitle: "videos" });
+import { videos } from "../db";
+export const home = (req, res) =>
+  res.render("home", { pageTitle: "home", videos });
 export const search = (req, res) => {
   const {
     query: { term: searchingBy },
