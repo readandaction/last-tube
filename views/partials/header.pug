@@ -6,7 +6,15 @@ header
         form(action=routes.search, method="get")
             input(type="text", placeholder="Search by .." name="term")
         ul
-            li
-                a(href=routes.join) Join
-            li
-                a(href=routes.login) Login
+            if !user.isAuthenticated
+                li
+                    a(href=routes.join) Join
+                li
+                    a(href=routes.login) Login
+            else
+                li
+                    a(href=routes.userDetail(user.id)) Profile
+                li
+                    a(href=routes.upload) Upload
+                li
+                    a(href=routes.logout) Log out
