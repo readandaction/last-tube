@@ -1,4 +1,9 @@
 @import "config/_variables.scss";
-body {
-  background-color: $sexyColor;
+@import "config/reset.scss";
+@import "main.scss";
+@import "partials/header.scss";
+
+video {
+  width: 400px;
+  height: 400px;
 }
