@@ -23,9 +23,14 @@ header {
       }
       ul {
         display: flex;
-        color: white;
+        color: blue;
         font-weight: 600;
         text-transform: uppercase;
+        li {
+          a {
+            color: yellow;
+          }
+        }
         li:not(:last-child) {
           margin-right: 15px;
         }
@@ -37,7 +42,7 @@ header {
           width: 100%;
           border-radius: 5px;
           font-size: 14px;
-          color: $black;
+          color: $grey;
           font-weight: 600;
           &::placeholder {
             font-weight: 300;
