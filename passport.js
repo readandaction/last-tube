@@ -3,6 +3,7 @@ import GitHubStrategy from "passport-github";
 import User from "./models/User";
 import { githubLoginCallback } from "./controllers/userControllers";
 import routes from "./routes";
+
 passport.use(User.createStrategy());
 passport.use(
   new GitHubStrategy(
