@@ -1,5 +1,6 @@
 import routes from "../routes";
 import Video from "../models/Video";
+import { Error } from "mongoose";
 
 export const home = async (req, res) => {
   try {
@@ -68,9 +69,12 @@ export const getEditVideo = async (req, res) => {
   } = req;
   try {
     const video = await Video.findById(id);
-    res.render("editVideo", { pageTitle: "editVideo", video });
+    if (video.creator != req.user.id) {
+      throw Error;
+    } else {
+      res.render("editVideo", { pageTitle: "editVideo", video });
+    }
   } catch (error) {
-    console.log(error);
     res.redirect(routes.home);
   }
 };
@@ -93,7 +97,12 @@ export const deleteVideo = async (req, res) => {
     params: { id },
   } = req;
   try {
-    await Video.findOneAndRemove({ _id: id });
+    const video = await Video.findById(id);
+    if (video.creator != req.user.id) {
+      throw Error;
+    } else {
+      await Video.findOneAndRemove({ _id: id });
+    }
   } catch (error) {
     console.log(error);
   }
