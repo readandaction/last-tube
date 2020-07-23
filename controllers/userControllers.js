@@ -33,8 +33,19 @@ export const postLogin = passport.authenticate("local", {
   successRedirect: routes.home,
 });
 
-export const logout = (req, res) =>
+export const githubLogin = passport.authenticate("github");
+
+export const githubLoginCallback = (accessToken, refreshToken, profile, cb) => {
+  console.log(accessToken, refreshToken, profile, cb);
+};
+export const postGithubLogin = (req, res) => {
+  res.redirect(routes.home);
+};
+
+export const logout = (req, res) => {
+  req.logout();
   res.render("logout", { pageTitle: "logout" });
+};
 export const users = (req, res) => res.render("users", { pageTitle: "users" });
 export const userDetail = (req, res) =>
   res.render("userDetail", { pageTitle: "userDetail" });
