@@ -72,6 +72,7 @@ export const logout = (req, res) => {
 };
 export const users = (req, res) => res.render("users", { pageTitle: "users" });
 export const getMe = (req, res) => {
+  console.log(req.user);
   res.render("userDetail", { pageTitle: "Profile", user: req.user });
 };
 export const userDetail = async (req, res) => {
@@ -80,6 +81,7 @@ export const userDetail = async (req, res) => {
   } = req;
   try {
     const user = await User.findById(id);
+    console.log(user);
     res.render("userDetail", { pageTitle: "userDetail", user });
   } catch (error) {
     res.redirect(routes.home);
