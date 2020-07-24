@@ -27,9 +27,29 @@
     }
   }
   .video__comments {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     margin-top: 20px;
+    padding: 0px 20px;
     .video__comment-number {
       font-size: 20px;
+      align-self: flex-end;
+    }
+    .add__comment {
+      align-self: flex-start;
+      width: 30%;
+    }
+    .video__comments-list {
+      margin-top: 20px;
+      font-size: 18px;
+
+      li {
+        width: 50%;
+        background-color: yellow;
+        border-radius: 5%;
+        margin-top: 10px;
+      }
     }
   }
 }

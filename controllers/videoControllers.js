@@ -1,5 +1,6 @@
 import routes from "../routes";
 import Video from "../models/Video";
+import Comment from "../models/Comment";
 import { Error } from "mongoose";
 
 export const home = async (req, res) => {
