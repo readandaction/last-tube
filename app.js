@@ -10,6 +10,7 @@ import { localsMiddlware } from "./middlewares";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
+import apiRouter from "./routers/apiRouter";
 import routes from "./routes";
 import "./passport";
 import passport from "passport";
@@ -42,5 +43,6 @@ app.use(localsMiddlware);
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
 app.use(routes.videos, videoRouter);
+app.use(routes.api, apiRouter);
 
 export default app;
