@@ -45,10 +45,20 @@
       font-size: 18px;
 
       li {
+        display: flex;
+        justify-content: space-between;
         width: 50%;
         background-color: yellow;
         border-radius: 5%;
         margin-top: 10px;
+        button {
+          width: 40px;
+          display: flex;
+          align-items: center;
+          &:focus {
+            outline: none;
+          }
+        }
       }
     }
   }
