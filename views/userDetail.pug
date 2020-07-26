@@ -4,7 +4,7 @@ include mixins/videoBlock
 block content
     .user-profile
         .user-profile__header
-            img.u-avatar(src=`/${user.avatarUrl}`, alt="사용자 사진")
+            img.u-avatar(src=user.avatarUrl, alt="사용자 사진")
             h3.profile__username=user.name
         if loggedUser && user.id === loggedUser.id
             .user-profile__buttons
