@@ -30,5 +30,5 @@ block content
             ul.video__comments-list#jsCommentList
                 each comment in video.comments.reverse()
                     li #{comment.text}
-                        if comment.creator == loggedUser.id                 
+                        if loggedUser && comment.creator == loggedUser.id                 
                             button(class="jsDeleteCommentBtns", id=comment.id) ❌
